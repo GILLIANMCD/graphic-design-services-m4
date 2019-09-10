@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aee818074ef74565ab14127c0d05b853.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['63714d12984543f99f2678f454cc7f45.vfs.cloud9.us-east-1.amazonaws.com']
 
 
 # Application definition
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
     'accounts',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
