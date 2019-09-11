@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block head_js %}
+    {% endblock head_js %}
 </head>
 <body>
     <!-- Fixed masthead -->
-    <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-masthead navbar-default navbar-fixed-top menu-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -28,13 +30,13 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}">Profile</a></li>
-                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                        <li class="menu-color"><a href="{% url 'profile' %}">Profile</a></li>
+                        <li class="menu-color"><a href="{% url 'logout' %}">Log Out</a></li>
                     {%  else %}
-                        <li><a href="{% url 'register' %}">Register</a></li>
-                        <li><a href="{% url 'login' %}">Log In</a></li>
+                        <li class="menu-color"><a href="{% url 'registration' %}">Register</a></li>
+                        <li class="menu-color"><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
-                    <li>
+                    <li class="menu-color">
                         <a href="{% url 'view_cart' %}">
                             <i class="fa fa-shipping-cart"></i>Cart
                             {% if product_count > 0 %}
@@ -46,6 +48,8 @@
             </div>
         </div>
     </nav>
+     
+
     {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
@@ -56,7 +60,7 @@
         </div>
     {% endif %}
     <div class="container">
-        <div class="display">
+         <div class="display">
             <form action="{% url 'search' %}" method="get">
                 <input type="text" name="q">
                 <button type="search">Search</button>
@@ -64,10 +68,37 @@
         </div>
         {% block content %} {% endblock %}
     </div>
-    <footer>
-        <div class="container">
-            <p>Made by Code Institute bootcampers</p>
+    
+
+<!--FOOTER-->
+ <!--<footer class="footer fixed-bottom">
+      <div class="container-fluid text-center text-md-left">
+          <div class="row">
+              <div class="display">
+                  
+                              <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q">
+                <button type="search">Search</button>
+            </form>  
+          </div>
+        <span class="text-muted">Place sticky footer content here.</span>
+        
         </div>
-    </footer>
+        </div>
+    </footer>-->
+
+<!-- Footer -->
+<footer class="footer">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center">
+      
+      <p>© 2019 Graphic Design Services</p>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
 </body>
 </html>
