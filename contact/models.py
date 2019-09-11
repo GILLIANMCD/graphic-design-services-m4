@@ -2,10 +2,13 @@ from django.db import models
 
 # A Simple Contact Form
 
-class contact(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    phone = models.CharField(max_length=30)
+class Contact(models.Model):
+    full_name = models.CharField(max_length=30)
+    phone_number = models.CharField(max_length=30)
     email = models.EmailField()
+    message = models.TextField()
+    
+    def __str__(self):
+        return self.full_name
     
     
