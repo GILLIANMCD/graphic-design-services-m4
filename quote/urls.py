@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from .views import get_quote
+from .views import quote
 
 urlpatterns = [
-    url(r'^$', get_quote, name='get_quote')
+    url(r'^$', quote, name='quote')
     ]

@@ -4,17 +4,18 @@ from django.utils import timezone
 from .models import Quote
 from .forms import GetQuote
 
-def get_quote(request):
+def quote(request):
+    
+    quote = GetQuote 
     
     if request.method == "POST":
-        form = GetQuote(request.get_quote, request.FILES, instance=get_quote)
+        form = GetQuote(request.POST)
         if form.is_valid():
-            get_quote = form.save()
+            quote = form.save()
             messages.success(request, "Thank you for your Quotation Request which has been sent sucessfully. We will be in touch soon.")
             return redirect(reverse('index'))
-        
-        else: 
-            return render(request, 'quote.html')
+    else: 
+        return render(request, 'quote.html',{"quote": quote})
  
         
     

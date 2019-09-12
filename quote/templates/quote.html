@@ -3,5 +3,8 @@
 {% block page_title %}Get Quote{% endblock %} 
 {% block page_heading %}Quote{% endblock %}
 {% block content %}
-<p>Quote Form will go here</p>
+<form method="POST" novalidate>
+    {% csrf_token %} {{ quote | as_bootstrap}}
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
 {% endblock %}
