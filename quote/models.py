@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Quote(models.Model):
     service_list = (
         ('logo_design', 'Logo Design'),
@@ -21,5 +22,7 @@ class Quote(models.Model):
     country = models.CharField(max_length=40, blank=False)
     postcode = models.CharField(max_length=20, blank=True)
     message = models.TextField(blank=False)
+    image = models.ImageField(upload_to="img", blank=True, null=True)
     service_required = models.CharField(max_length=100, choices = service_list)
+
     

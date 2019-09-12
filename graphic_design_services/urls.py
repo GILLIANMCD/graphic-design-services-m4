@@ -14,10 +14,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic import RedirectView
+from django.views.static import serve
 from home.views import index
 from accounts import urls as accounts_urls
 from products import urls as urls_products
 from cart import urls as urls_cart
+#from contact import urls as urls_contact
+from quote import urls as urls_quote
 from search import urls as urls_search
 from checkout import urls as urls_checkout
 from products.views import all_products
@@ -31,6 +35,8 @@ urlpatterns = [
     url(r'^products/', include(urls_products)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^cart/', include(urls_cart)),
+#    url(r'^contact/', include(urls_contact)),
+    url(r'^quote/', include(urls_quote)),
     url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
