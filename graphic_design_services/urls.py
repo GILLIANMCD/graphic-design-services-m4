@@ -16,9 +16,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import RedirectView
 from django.views.static import serve
-from home.views import index
 from accounts import urls as accounts_urls
-#from home import urls as urls_home
 from products import urls as urls_products
 from cart import urls as urls_cart
 from contact import urls as urls_contact
@@ -31,10 +29,8 @@ from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index),
-#   url(r'^$', all_products, name="index"),
+   url(r'^$', all_products, name="index"),
     url(r'^accounts/', include(accounts_urls)),
-#    url(r'^home/', include(urls_home)),
     url(r'^products/', include(urls_products)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^cart/', include(urls_cart)),
