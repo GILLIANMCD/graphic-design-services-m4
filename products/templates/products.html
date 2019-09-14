@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="jumbotron jumbotron-fluid bg-product">
+  <div class="container">
+    <h1 class="display-4">Bring life to your branding with Graphic Design Services!</h1>
+    <p class="lead">Choose from a wide range of ready made templates or <a href="{% url 'contact' %}">Contact Us </a>for your Personal Design.</p>
+  </div>
+</div>
+<div id="container">
 <div class="row row-flex">
     {% for product in products %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
@@ -24,4 +31,6 @@
         </div>
     {% endfor %}
 </div>
+
 {% endblock %}
+</div>

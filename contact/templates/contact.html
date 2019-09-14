@@ -3,8 +3,14 @@
 {% block page_title %}Contact Us{% endblock %} 
 {% block page_heading %}Contact{% endblock %}
 {% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">We would love to hear from you!</h1>
+    <p class="lead">Whether you have a question about the best templates for your needs or would just like to have a chat we are here to help, so just pop us a message, give us a ring or email us.</p>
+  </div>
+</div>
 <form method="POST" novalidate>
     {% csrf_token %} {{ contact | as_bootstrap}}
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default btn-style">Submit</button>
 </form>
 {% endblock %}

@@ -21,16 +21,23 @@ from products import urls as urls_products
 from cart import urls as urls_cart
 from contact import urls as urls_contact
 from quote import urls as urls_quote
+from posts import urls as urls_post
 from search import urls as urls_search
 from checkout import urls as urls_checkout
 from products.views import all_products
 from django.views import static
 from .settings import MEDIA_ROOT
+from .views import home
+from .views import about
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-   url(r'^$', all_products, name="index"),
+    url(r'^$', home, name="index"),
+    url(r'about', about, name="about"),
+    #url(r'^$', views.home),
+    #url(r'^about/',views.about),
     url(r'^accounts/', include(accounts_urls)),
+    url(r'^posts/', include(urls_post)),
     url(r'^products/', include(urls_products)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^cart/', include(urls_cart)),
