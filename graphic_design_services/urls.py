@@ -21,6 +21,7 @@ from products import urls as urls_products
 from cart import urls as urls_cart
 from contact import urls as urls_contact
 from quote import urls as urls_quote
+from portfolio import urls as urls_portfolio
 from posts import urls as urls_post
 from search import urls as urls_search
 from checkout import urls as urls_checkout
@@ -34,8 +35,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name="index"),
     url(r'about', about, name="about"),
-    #url(r'^$', views.home),
-    #url(r'^about/',views.about),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^posts/', include(urls_post)),
     url(r'^products/', include(urls_products)),
@@ -43,6 +42,7 @@ urlpatterns = [
     url(r'^cart/', include(urls_cart)),
     url(r'^contact/', include(urls_contact)),
     url(r'^quote/', include(urls_quote)),
+    url(r'^portfolio/', include(urls_portfolio)),
     url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]

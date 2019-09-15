@@ -8,23 +8,77 @@ body {
     margin-bottom: 60px; /*for sticky footer*/
 }
 
-/*Masthead*/
-.menu-top {
+/*NAVBAR */
+
+.fixed-top {
     background-color: #f13c20;
-    border-bottom: 1px solid #f13c20;
-    
+     min-height: 100px;
 }
 
-.top-nav li a:hover {
-    background-color: #000;
-    padding: 20px;
-    
-    
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    color: #4056a1;
+    font-size: 2em;
+}
+
+.nav-link {
+    color: #efe2ba;
+    font-size: 1.5rem;
+   
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active,
+.navbar-brand.active {
+    color: #4056a1;
+}
+
+.navbar-default .navbar-collapse {
+    border-color: rgba(255,255,255,.02);
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fff;
+    border-color: #1ee2e7;
+    background-color: #1ee2e7;
 }
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #000;
+}
+
+.navbar-default .nav li a {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus {
+    outline: 0;
+    color: #000;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #1ee2e7;
+}
+
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #17d0d5;
+}
+
+/*JUMBOTRON*/
 
 .jumbotron {
     background-color: #Afd275;
@@ -55,15 +109,7 @@ form {
 }
 
 /*All Links Style*/
-.menu-color {
-    background-color: #fff;
-    padding: 20px;
-}
-a {
-    color: #4056a1;
 
-    
-}
 .btn-style {
     background-color: #4056a1;
 }
@@ -102,6 +148,7 @@ a {
 }
 
 .alert-success {
+    padding-top: 15px;
     background-color: #c2b9b0;
     border-color: #c2b9b0;
     color: #7e685a;
@@ -120,6 +167,9 @@ a {
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 9px;
+}
+.badge-warning {
+    background-color: #c5cbe3;
 }
 
 .label-warning[href],
