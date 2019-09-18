@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['63714d12984543f99f2678f454cc7f45.vfs.cloud9.us-east-1.amazonaws.com',
+ALLOWED_HOSTS = ['86950847089c46a089cae3d26ac90749.vfs.cloud9.us-east-1.amazonaws.com',
                  'graphic-design-services.herokuapp.com']
 
 
@@ -179,7 +179,7 @@ MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')

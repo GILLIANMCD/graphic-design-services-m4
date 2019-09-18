@@ -10,82 +10,7 @@ body {
 
 /*NAVBAR */
 
-.fixed-top {
-    background-color: #f13c20;
-     min-height: 100px;
-}
 
-.navbar-brand {
-    font-family: 'Orbitron', sans-serif;
-    color: #4056a1;
-    font-size: 2em;
-}
-
-.nav-link {
-    color: #efe2ba;
-    font-size: 1.5rem;
-   
-}
-
-.navbar-brand:hover,
-.navbar-brand:focus,
-.navbar-brand:active,
-.navbar-brand.active {
-    color: #4056a1;
-}
-
-.navbar-default .navbar-collapse {
-    border-color: rgba(255,255,255,.02);
-}
-
-.navbar-default .navbar-toggle {
-    border-color: #1ee2e7;
-    background-color: #1ee2e7;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
-}
-
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: #000;
-}
-
-.navbar-default .nav li a {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.navbar-default .nav li a:hover,
-.navbar-default .nav li a:focus {
-    outline: 0;
-    color: #000;
-}
-
-.navbar-default .navbar-nav>.active>a {
-    border-radius: 0;
-    color: #fff;
-    background-color: #1ee2e7;
-}
-
-.navbar-default .navbar-nav>.active>a:hover,
-.navbar-default .navbar-nav>.active>a:focus {
-    color: #fff;
-    background-color: #17d0d5;
-}
-
-/*JUMBOTRON*/
-
-.jumbotron {
-    background-color: #Afd275;
-    background-size: cover;
-}
-
-/*jumbotron bg images*/
 
 .bg-product {
     background-image: url("https://images.pexels.com/photos/1328891/pexels-photo-1328891.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
@@ -177,14 +102,7 @@ form {
     background-color: #c67605;
 }
 
-.product {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-}
+
 
 caption p {
     word-wrap: break-word;

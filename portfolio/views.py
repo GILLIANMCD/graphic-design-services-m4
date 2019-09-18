@@ -5,6 +5,11 @@ from .models import Portfolio
 from .forms import PortfolioForm
 
 
+def all_portfolios(request):
+    portfolios = Portfolio.objects.all()
+    return render(request, "portfolio.html", {"portfolios": portfolios})
+    
+
 def portfolio(request):
     
     portfolio = PortfolioForm 
