@@ -19,7 +19,7 @@ body {
 /*JUMBOTRON*/
 
 .jumbotron {
-    background: url(media/img/jumbotron-bg.png);
+    background: url(img/jumbotron-bg.png);
     background-color: #c5cbe3;
     background-size: cover;
 }
@@ -94,6 +94,16 @@ form {
     color: #f5f5f5;
     background-color: #4056a1;
     border-color: #4056a1;
+}
+
+/*PRODUCT SIZES*/
+.product {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
 }
 
 /*FOOTER*/

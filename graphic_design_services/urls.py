@@ -27,7 +27,7 @@ from search import urls as urls_search
 from checkout import urls as urls_checkout
 from products.views import all_products
 from django.views import static
-#from .settings import MEDIA_ROOT
+from .settings import MEDIA_ROOT
 from .views import home
 from .views import about
 
@@ -44,5 +44,5 @@ urlpatterns = [
     url(r'^quote/', include(urls_quote)),
     url(r'^portfolio/', include(urls_portfolio)),
     url(r'^search/', include(urls_search)),
-#   url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
+   url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
