@@ -8,6 +8,9 @@ body {
     background-color: #efe2ba;
 }
 
+.flex-grow {
+    flex: 1;
+}
 /*NAVBAR */
 
 .navbar-light .navbar-nav .nav-link {
@@ -93,8 +96,6 @@ form {
 /*FOOTER*/
 
 .footer {
-  position: static;
-  bottom: 0;
   width: 100%;
   color: #efe2ba;
 }
