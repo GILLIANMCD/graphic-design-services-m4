@@ -19,26 +19,10 @@ body {
 /*JUMBOTRON*/
 
 .jumbotron {
-    background: url(img/jumbotron-bg.png);
-    background-color: #c5cbe3;
-    background-size: cover;
+    background: url("https://gillian-graphic-design-services.s3-eu-west-1.amazonaws.com/media/img/jumbotron-bg2.png");
+    background-size: 12em;
 }
 
-/*JUMBOTRON BG IMAGES*/
-
-.bg-product {
-    background-image: url("https://images.pexels.com/photos/1328891/pexels-photo-1328891.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-    background-repeat: no-repeat;
-    color: #fff;
-       
-}
-
-.bg-register {
-    background-image: url("https://images.pexels.com/photos/261577/pexels-photo-261577.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-    background-repeat: no-repeat;
-    color: #fff;
-       
-}
 
 a {
     color: #4056a1;
