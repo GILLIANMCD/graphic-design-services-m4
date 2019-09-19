@@ -183,6 +183,7 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
+
 STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
