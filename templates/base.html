@@ -7,65 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Graphic Design Services</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+ </head>
 
-</head>
-<nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-        <a class="navbar-brand float-left" href="{% url 'index' %}">Graphic Design Services</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-        <div class="collapse navbar-collapse float-right" id="navbarSupportContent">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 top-nav">
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products' %}">Products</a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'portfolio' %}">About</a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'quote' %}">Get Quote</a>
-                    </li>
-                    
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'get_posts' %}">Blog</a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user"></i>Profile</a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'registration' %}">Register</a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
-                    </li>
+<body class="d-flex flex-column">
+  
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f13c20">
+<div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/media/images/logo.png" width="150" height="150" class="d-inline-block align-center">
+            
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column align-items-start ml-lg-2 ml-0" id="navbarCollapse">
+            <div class="navbar-nav mr-auto justify-content-end">
+                <a class="nav-item nav-link" href="{% url 'products' %}">Products</a>
+                <a class="nav-item nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+                <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+                <a class="nav-item nav-link" href="{% url 'contact' %}">Contact</a>
+                <a class="nav-item nav-link" href="{% url 'quote' %}">Quote</a>
+            </div>
+
+{% if user.is_authenticated %}
+            <div class="navbar-nav flex-row mb-md-1 mt-md-0 mb-3 mt-2">
+                <a class="nav-item nav-link" href="{% url 'get_posts' %}">Blog</a>
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a>
+                </div>
+                 {% else %}
+            <div class="navbar-nav flex-row mb-md-1 mt-md-0 mb-3 mt-2"> 
+                <a class="nav-item nav-link" href="{% url 'registration' %}">Register</a>
+                <a class="nav-item nav-link" href="{% url 'login' %}">Log In</a>
                 {% endif %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'view_cart' %}">
-                            <i class="fa fa-shipping-cart"></i>Cart
-                            {% if product_count > 0 %}
-                            <label class="badge badge-warning">{{ product_count }}</label>
-                            {% endif %}
-                        </a>
-                </li>
-            </ul>
+            </div>
         </div>
-    </div>
-</nav>
+      
 
-<body>
+    </nav>
 
     {% if messages %}
     <div class="alert alert-success">
@@ -75,20 +60,10 @@
     </div>
     {% endif %} {% block content %} {% endblock %}
 
- <div class="container">
-        <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="submit">Search</button>
-            </form>
-        </div>
 
-    </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     {% block head_js %}
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">
@@ -104,20 +79,79 @@
 
         });
     </script>
+     <!-- Copyright -->
+                </body>
     <!--FOOTER-->
-    <footer class="footer">
-        
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center">
-
-            <p>© 2019 Graphic Design Services</p>
+<footer class="footer mainfooter" role="contentinfo" style="background-color: #f13c20">
+  <div class="footer-middle">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>Menu</h4>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'quote' %}">Quote</a></li>
+          </ul>
         </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>User</h4>
+          <ul class="list-unstyled">
+              {% if user.is_authenticated %}
+            <li><a href="{% url 'get_posts' %}">Blog</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'registration' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+            </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+                <h4>Follow Us</h4>
+                <ul class="list-inline social-links">
+                 <li class="list inline-item nav-item"><a href="#" class="nav-link" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                 <li class="list inline-item nav-item"><a href="#" class="nav-link" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                 <li class="list inline-item nav-item"><a href="#" class="nav-link" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+          
+        </div>
+      </div>
+    	<div class="col-md-3">
+    		
+            
+            <h4>Search</h4>
+           <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
+                <input class="form-control mr-sm-2" type="text" placeholder="Product Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+		</div>
+    </div>
+	<div class="row">
+		<div class="col-md-12 copy">
+			<p class="text-center">&copy; Copyright 2019 - Graphic Design Services.</p>
+		</div>
+	</div>
+
+
+  </div>
+  </div>
+</footer>
         <!-- Copyright -->
 
     </footer>
     <!-- Footer -->
 
-</body>
+
 
 </html>
