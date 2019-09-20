@@ -7,6 +7,8 @@ from .forms import PortfolioForm
 
 def all_portfolios(request):
     portfolios = Portfolio.objects.all()
+    print('****** TESTING STUFF ******')
+    print(portfolios)
     return render(request, "portfolio.html", {"portfolios": portfolios})
     
 
