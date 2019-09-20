@@ -4,15 +4,15 @@
 {% block page_heading %}Quote{% endblock %}
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
-  <div class="container-fluid flex-grow">
+  <div class="container">
     <h1 class="display-4">Need a Quotation?</h1>
     <p class="lead">Complete the form below with as much information as possible. Make sure to upload your existing logo if you have one and we will send you a personal quotation within 2 hours</p>
-  </div>
 </div>
-
+</div>
+  <div class="container-fluid flex-grow">
 <form method="POST" novalidate>
     {% csrf_token %} {{ quote | as_bootstrap}}
     <button type="submit" class="btn btn-default btn-style">Submit</button>
 </form>
-
+</div>
 {% endblock %}

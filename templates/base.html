@@ -46,6 +46,13 @@
                 <a class="nav-item nav-link" href="{% url 'registration' %}">Register</a>
                 <a class="nav-item nav-link" href="{% url 'login' %}">Log In</a>
                 {% endif %}
+                
+                <a class="nav-item nav-link"href="{% url 'view_cart' %}">
+                            <i class="fa fa-shopping-cart"></i>Cart
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a>
             </div>
         </div>
       
@@ -84,7 +91,7 @@
     <!--FOOTER-->
 <footer class="footer" role="contentinfo" style="background-color: #f13c20">
   <div class="footer-middle">
-  <div class="container-fluid py-3">
+  <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <!--Column1-->
@@ -112,6 +119,12 @@
             <li><a href="{% url 'registration' %}">Register</a></li>
             <li><a href="{% url 'login' %}">Login</a></li>
             {% endif %}
+            <a class="nav-item nav-link"href="{% url 'view_cart' %}">
+                            <i class="fa fa-shopping-cart"></i>Cart
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a>
             </ul>
         </div>
       </div>
