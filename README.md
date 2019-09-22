@@ -39,6 +39,7 @@ The site existingly has 8 app consisting of accounts, cart, checkout, portfolio,
 - When a user enters wrong password 2 messages appear 1 success and another with "Your username or password is incorrect" this needs to be fixed through form validation.
 - Happy Clients Club where users can register for discounts for the provision of a testimonial which can be promoted in Portfolios. 
 - Blog has to be complete at present there is only test blog showing and form to send blog post is not set up. 
+- Images not showing on Portfolio 
 - 
 
 
