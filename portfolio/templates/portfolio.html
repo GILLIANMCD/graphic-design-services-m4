@@ -7,20 +7,19 @@
     <p class="lead"></p>
   </div>
 </div>
-<div class="container flex-grow">
+<div class="container">
+<div class="row">
   {% for portfolio in portfolios %}
-<div class="card-deck">
+<div class="col-sm-6">
   <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <img class="card-img-top" src="{{ portfolio.image }}">
     <div class="card-body">
       <h5 class="card-title">{{ portfolio.title }}</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">{{ portfolio.content }}</p>
     </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
+     </div>
 </div>
 {% endfor %}
+</div>
 </div>
 {% endblock %}
