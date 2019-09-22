@@ -26,7 +26,6 @@ from posts import urls as urls_post
 from search import urls as urls_search
 from checkout import urls as urls_checkout
 from products.views import all_products
-
 from django.views import static
 from .settings import MEDIA_ROOT
 from .views import home
